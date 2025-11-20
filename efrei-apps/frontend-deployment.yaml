@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    name: frontend
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: efrei2023/frontend:1
+          ports:
+            - name: http
+              containerPort: 80
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: efrei2023
