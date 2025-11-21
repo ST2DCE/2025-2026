@@ -152,7 +152,7 @@ One of the many advantages of Helm is that it gives you a one-command installati
 
   Step 3 - Access your app: `kubectl port-forward service/my-blog-wordpress 8080:80`
 
-### Minikube dashboard overview ###
+### Kubernetes dashboard overview ###
 
 The Dashboard is a web-based Kubernetes user interface. You can use it to:
 
@@ -192,8 +192,20 @@ subjects:
 ```
 Apply the configuration : `kubectl apply -f dashboard-config.yaml`
 
-create an access token for the Dashboard with the command : `kubectl -n create token admin-user`
+create an access token for the Dashboard with the command : `kubectl  create token admin-user`
 
 Access to the UI: `kubectl  port-forward service/kubernetes-dashboard-kong-proxy 8443:443`
+
+## ArgoCD Overview ##
+
+* Step 1 -  kubectl create namespace argocd
+
+* Step 2 -  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+* Step 3 -  kubectl get all -n argocd
+
+* Step 4 -  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d 
+
+* Step 5 -  kubectl port-forward svc/argocd-server -n argocd 8081:443
 
 
