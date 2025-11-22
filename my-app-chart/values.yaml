@@ -13,3 +13,6 @@ environment: blue
 
 ingress:
   enabled: false
+
+autoscalling:
+  enabled: true
