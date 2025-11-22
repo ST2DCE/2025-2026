@@ -14,5 +14,5 @@ environment: blue
 ingress:
   enabled: false
 
-autoscalling:
+autoscaling:
   enabled: true
