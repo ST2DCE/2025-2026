@@ -12,10 +12,4 @@ service:
 environment: blue
 
 ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
-  hosts:
-    - host: my-app.local
-      paths:
-        - /
+  enabled: false
