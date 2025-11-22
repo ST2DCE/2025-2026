@@ -16,3 +16,6 @@ ingress:
 
 autoscaling:
   enabled: true
+
+httpRoute:
+  enabled: false
