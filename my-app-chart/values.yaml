@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: "1.19"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+environment: blue
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - host: my-app.local
+      paths:
+        - /
