@@ -192,7 +192,7 @@ subjects:
 ```
 Apply the configuration : `kubectl apply -f dashboard-config.yaml`
 
-create an access token for the Dashboard with the command : `kubectl  create token admin-user`
+create an access token for the Dashboard with the command : `kubectl create token admin-user`
 
 Access to the UI: `kubectl  port-forward service/kubernetes-dashboard-kong-proxy 8443:443`
 
@@ -207,5 +207,4 @@ Access to the UI: `kubectl  port-forward service/kubernetes-dashboard-kong-proxy
 * Step 4 -  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d 
 
 * Step 5 -  kubectl port-forward svc/argocd-server -n argocd 8081:443
-
 
